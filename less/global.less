@@ -11,6 +11,16 @@ html {
     font-size: 2rem;
 }
 
+.three-col {
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
+}
+
 .three-col > div {
     width: 32%;
+
+    @media (max-width: 500px) {
+        width: 100%;
+    }
 }
