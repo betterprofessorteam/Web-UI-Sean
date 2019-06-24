@@ -1,7 +1,7 @@
 section.hero {
     position: relative;
     height: 100vh;
-    background-color: orange;
+    background: linear-gradient(45deg, orange, #f3889b);
     font-size: 1rem;
 
     .content {
@@ -9,5 +9,9 @@ section.hero {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+
+        .center-content {
+            .flex();
+        }
     }
 }

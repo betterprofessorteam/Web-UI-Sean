@@ -126,6 +126,54 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+html {
+  font-size: 62.5%;
+}
+.flex-parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.call-to-action {
+  position: relative;
+  background-color: #00b57b;
+  color: #fff;
+  padding: 1% 3%;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  transition: 0.25s ease-in-out;
+  font-size: 2rem;
+}
+.call-to-action:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%) translateX(0);
+  width: 0;
+  height: 0;
+  border-left-color: #f0b310;
+  border: 7px solid transparent;
+  border-left-color: #00b57b;
+  right: 0;
+  opacity: 0;
+  transform: translateY(-50%) translateX(-4px);
+  transition: opacity 0.25s ease-in-out;
+}
+.call-to-action:hover {
+  background-color: #fff;
+  color: #00b57b;
+  padding-right: 5%;
+}
+.call-to-action:hover:after {
+  opacity: 1;
+}
+.three-col > div {
+  width: 32%;
+}
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
@@ -208,19 +256,37 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a {
   font-family: 'Oswald', 'Open Sans', arial, sans-serif;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+p {
+  font-family: 'Open Sans', arial, sans-serif;
+  font-size: 1.4rem;
+}
+a {
+  text-decoration: none;
 }
 header.site-header {
   position: absolute;
   width: 100%;
-  z-index: 1;
+  padding: 1%;
   background-color: transparent;
+  z-index: 1;
 }
 section.hero {
   position: relative;
   height: 100vh;
-  background-color: orange;
+  background: linear-gradient(45deg, orange, #f3889b);
   font-size: 1rem;
 }
 section.hero .content {
@@ -228,4 +294,10 @@ section.hero .content {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+section.hero .content .center-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
