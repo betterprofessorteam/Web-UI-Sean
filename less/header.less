@@ -5,6 +5,10 @@ header.site-header {
     background-color: transparent;
     z-index: 1;
 
+    @media @mobile {
+        padding: 2%;
+    }
+
     h2 {
         text-transform: none;
         color: #fff;
@@ -19,10 +23,18 @@ header.site-header {
         height: 40px;
         background-color: transparent;
         z-index: 1;
+
+        @media @mobile {
+            right: 35px;
+        }
     }
 
     .delicious-hamburger:hover {
         cursor: pointer;
+    }
+
+    .delicious-hamburger:focus {
+        outline: none !important;
     }
 
     /* Closed */
@@ -45,6 +57,7 @@ header.site-header {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        transition: 0.25s ease-in-out;
     }
 
     .beef-pattie:before,
@@ -60,24 +73,25 @@ header.site-header {
 
     .beef-pattie:before {
         top: -9px;
+        transition: 0.25s ease-in-out;
     }
 
     .beef-pattie:after {
         bottom: -9px;
     }
+}
 
-    /* Open */
+/* Open */
 
-    body.nav-open .beef-pattie {
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
+body.nav-open .beef-pattie {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
 
-    body.nav-open .beef-pattie:before {
-        top: 0;
-        transform: rotate(90deg);
-    }
+body.nav-open .beef-pattie:before {
+    top: 0;
+    transform: rotate(90deg);
+}
 
-    body.nav-open .beef-pattie:after {
-        top: 0;
-    }
+body.nav-open .beef-pattie:after {
+    top: 0;
 }

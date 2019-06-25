@@ -5,12 +5,21 @@ section.hero {
     font-size: 1rem;
     color: #fff;
 
+    @media @mobile {
+        background: url(../assets/images/app-use-reduced.png) 50% 127% no-repeat, linear-gradient(45deg, #f66b55, #f1995b);
+        background-size: contain;
+    }
+
     .content {
         position: absolute;
         left: 0;
         top: 50%;
         padding: 4%;
         transform: translate(0%, -50%);
+
+        @media @mobile {
+            top: 38%;
+        }
 
         .center-content {
             .flex();
@@ -31,6 +40,10 @@ section.hero {
         transform: translateY(0) translateX(-50%);
         animation: startButton 0.75s ease-in-out infinite;
         animation-direction: alternate;
+
+        @media @mobile {
+            bottom: 25%;
+        }
 
         &:after {
             content: '';

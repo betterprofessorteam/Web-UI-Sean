@@ -4,6 +4,10 @@ main section.main-info {
     position: relative;
     background: linear-gradient(90deg, #348ea1, #7abd92);
 
+    @media @mobile {
+        height: initial;
+    }
+
     .flex-parent {
         position: absolute;
         top: 50%;
@@ -11,6 +15,21 @@ main section.main-info {
         transform: translate(-50%, -50%);
         max-width: 1200px;
         z-index: 1;
+
+        @media @mobile {
+            position: relative;
+            padding: 10%;
+            top: initial;
+            left: initial;
+            transform: none;
+            max-width: initial;
+        }
+    }
+
+    img {
+        @media @mobile {
+            width: 100%;
+        }
     }
 
     .color-circle {
@@ -22,6 +41,10 @@ main section.main-info {
         border-radius: 50%;
         background: #e36d5b;
         z-index: 0;
+
+        @media @mobile {
+            display: none;
+        }
     }
 
     .color-circle-top {
@@ -33,6 +56,10 @@ main section.main-info {
         border-radius: 50%;
         background: #e36d5b;
         z-index: 0;
+
+        @media @mobile {
+            display: none;
+        }
     }
 
     ul {
@@ -60,6 +87,10 @@ main section.main-info-last {
         bottom: 0;
         z-index: 0;
 
+        @media @mobile {
+            display: none;
+        }
+
         &:after {
             content: '';
             transform: rotate(-70deg);
@@ -76,6 +107,10 @@ main section.main-info-last {
         left: -100px;
         top: -100px;
         z-index: 0;
+
+        @media @mobile {
+            display: none;
+        }
 
         &:after {
             content: '';

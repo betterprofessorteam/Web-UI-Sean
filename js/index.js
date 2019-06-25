@@ -24,3 +24,13 @@ $(document).ready(function() {
         } // End if
     });
 });
+
+var body = document.querySelector('body');
+var hamburger = document.querySelector('.delicious-hamburger');
+hamburger.addEventListener('click', function() {
+    if (body.classList.contains('nav-open')) {
+        body.classList.remove('nav-open');
+    } else {
+        body.classList.add('nav-open');
+    }
+});
