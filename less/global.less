@@ -1,5 +1,14 @@
 html {
     font-size: 62.5%;
+
+    @media @mobile {
+        font-size: 57%;
+    }
+}
+
+body {
+    overflow-x: hidden;
+    color: #fff;
 }
 
 .flex-parent {
@@ -9,16 +18,17 @@ html {
 .call-to-action {
     .main-btn();
     font-size: 2rem;
+    display: inline-block;
 }
 
-.three-col {
+.two-col {
     @media (max-width: 500px) {
         flex-direction: column;
     }
 }
 
-.three-col > div {
-    width: 32%;
+.two-col > div {
+    width: 65%;
 
     @media (max-width: 500px) {
         width: 100%;

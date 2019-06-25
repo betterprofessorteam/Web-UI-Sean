@@ -4,4 +4,94 @@ header.site-header {
     padding: 1%;
     background-color: transparent;
     z-index: 1;
+
+    @media @mobile {
+        padding: 2%;
+    }
+
+    h2 {
+        text-transform: none;
+        color: #fff;
+    }
+
+    .delicious-hamburger {
+        position: absolute;
+        right: 55px;
+        border: none;
+        top: 13px;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        z-index: 1;
+
+        @media @mobile {
+            right: 35px;
+        }
+    }
+
+    .delicious-hamburger:hover {
+        cursor: pointer;
+    }
+
+    .delicious-hamburger:focus {
+        outline: none !important;
+    }
+
+    /* Closed */
+    .hamburger-wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        border: none !important;
+        outline: none !important;
+    }
+
+    .beef-pattie {
+        position: absolute;
+        height: 4px;
+        width: 35px;
+        background-color: #fff;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.25s ease-in-out;
+    }
+
+    .beef-pattie:before,
+    .beef-pattie:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 35px;
+        background-color: #fff;
+        left: 0;
+    }
+
+    .beef-pattie:before {
+        top: -9px;
+        transition: 0.25s ease-in-out;
+    }
+
+    .beef-pattie:after {
+        bottom: -9px;
+    }
+}
+
+/* Open */
+
+body.nav-open .beef-pattie {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+body.nav-open .beef-pattie:before {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+body.nav-open .beef-pattie:after {
+    top: 0;
 }
