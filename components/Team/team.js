@@ -2,9 +2,12 @@ class TeamMember {
     constructor(member) {
         this.member = member;
 
-        this.member.addEventListener('click', function() {
-            console.log('You clicked me!');
-        });
+        this.member.addEventListener('click', () => this.activate());
+    }
+
+    activate() {
+        teamMembers.forEach(member => member.classList.remove('active'));
+        this.member.classList.add('active');
     }
 }
 
