@@ -58,6 +58,7 @@ header.site-header {
         top: 50%;
         transform: translate(-50%, -50%);
         transition: 0.25s ease-in-out;
+        border-radius: 3px;
     }
 
     .beef-pattie:before,
@@ -69,6 +70,9 @@ header.site-header {
         width: 35px;
         background-color: #fff;
         left: 0;
+        transition: 0.25s ease-in-out;
+        transform: rotate(0deg);
+        border-radius: 3px;
     }
 
     .beef-pattie:before {
@@ -77,21 +81,22 @@ header.site-header {
     }
 
     .beef-pattie:after {
-        bottom: -9px;
+        top: 9px;
     }
 }
 
 /* Open */
 
 body.nav-open .beef-pattie {
-    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: transparent;
 }
 
 body.nav-open .beef-pattie:before {
     top: 0;
-    transform: rotate(90deg);
+    transform: rotate(45deg);
 }
 
 body.nav-open .beef-pattie:after {
     top: 0;
+    transform: rotate(-45deg);
 }
