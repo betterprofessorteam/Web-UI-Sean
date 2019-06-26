@@ -309,6 +309,7 @@ li {
 }
 a {
   text-decoration: none;
+  transition: 0.25s ease-in-out;
 }
 /* ------- */
 @keyframes bounceButton {
@@ -374,6 +375,38 @@ header.site-header {
     padding: 2%;
   }
 }
+header.site-header nav.primary-nav {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: transparent;
+  width: 3000px;
+  height: 3000px;
+  border-radius: 100%;
+  transition: 0.5s linear;
+  z-index: 9998;
+}
+header.site-header nav.primary-nav ul {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 0;
+  background-color: #39314b;
+  padding: 34%;
+  border-radius: 100%;
+}
+header.site-header nav.primary-nav ul li {
+  list-style-type: none;
+}
+header.site-header nav.primary-nav ul a {
+  color: #fff;
+  font-size: 3rem;
+}
+header.site-header nav.primary-nav ul a:hover {
+  color: #e36d5b;
+}
 header.site-header h2 {
   text-transform: none;
   color: #fff;
@@ -386,7 +419,7 @@ header.site-header .delicious-hamburger {
   width: 40px;
   height: 40px;
   background-color: transparent;
-  z-index: 1;
+  z-index: 9999;
 }
 @media (max-width: 500px) {
   header.site-header .delicious-hamburger {
@@ -441,14 +474,21 @@ header.site-header .beef-pattie:after {
   top: 9px;
 }
 /* Open */
-body.nav-open .beef-pattie {
+body.nav-open header.site-header nav.primary-nav {
+  transform: translate(-50%, -50%) scale(1);
+}
+body.nav-open header.site-header .delicious-hamburger {
+  position: fixed;
+  right: 24px;
+}
+body.nav-open header.site-header .beef-pattie {
   background-color: transparent;
 }
-body.nav-open .beef-pattie:before {
+body.nav-open header.site-header .beef-pattie:before {
   top: 0;
   transform: rotate(45deg);
 }
-body.nav-open .beef-pattie:after {
+body.nav-open header.site-header .beef-pattie:after {
   top: 0;
   transform: rotate(-45deg);
 }
@@ -515,6 +555,7 @@ main section.main-info {
   overflow: hidden;
   position: relative;
   background: linear-gradient(90deg, #348ea1, #7abd92);
+  z-index: 0;
 }
 @media (max-width: 500px) {
   main section.main-info {
@@ -688,6 +729,9 @@ body.about section.hero .center-content > div {
 }
 body.about section.hero .center-content .bp-team .member {
   padding: 1%;
+}
+body.about section.hero .center-content .bp-team .member:hover {
+  cursor: pointer;
 }
 body.about section.hero .center-content .bp-team .member img {
   border-radius: 50%;
