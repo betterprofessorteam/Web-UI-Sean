@@ -679,9 +679,33 @@ body.about section.hero .content {
   padding: 4%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-body.about section.hero .center-content div {
-  padding: 2%;
+body.about section.hero .center-content > div {
+  width: 100%;
+}
+body.about section.hero .center-content .bp-team .member {
+  padding: 1%;
+}
+body.about section.hero .center-content .bp-team .member img {
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+}
+body.about section.hero .center-content .bp-team .member h2 {
+  margin-top: 25px;
+}
+body.about section.hero .center-content .bp-team .member p {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+body.about section.hero .center-content .bp-team .member.active img {
+  transform: scale(1.2) translateY(-22px);
+  box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.4);
+}
+body.about section.hero .center-content .bp-team .member.active p {
+  opacity: 1;
 }
 footer {
   background-color: #38304b;
