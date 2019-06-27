@@ -9,6 +9,43 @@ header.site-header {
         padding: 2%;
     }
 
+    nav.primary-nav {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background-color: transparent;
+        width: 3000px;
+        height: 3000px;
+        border-radius: 100%;
+        transition: 0.5s linear;
+        z-index: 9998;
+
+        ul {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin-left: 0;
+            background-color: #39314b;
+            padding: 34%;
+            border-radius: 100%;
+
+            li {
+                list-style-type: none;
+            }
+
+            a {
+                color: #fff;
+                font-size: 3rem;
+
+                &:hover {
+                    color: #e36d5b;
+                }
+            }
+        }
+    }
+
     h2 {
         text-transform: none;
         color: #fff;
@@ -22,7 +59,7 @@ header.site-header {
         width: 40px;
         height: 40px;
         background-color: transparent;
-        z-index: 1;
+        z-index: 9999;
 
         @media @mobile {
             right: 35px;
@@ -58,6 +95,7 @@ header.site-header {
         top: 50%;
         transform: translate(-50%, -50%);
         transition: 0.25s ease-in-out;
+        border-radius: 3px;
     }
 
     .beef-pattie:before,
@@ -69,6 +107,9 @@ header.site-header {
         width: 35px;
         background-color: #fff;
         left: 0;
+        transition: 0.25s ease-in-out;
+        transform: rotate(0deg);
+        border-radius: 3px;
     }
 
     .beef-pattie:before {
@@ -77,21 +118,32 @@ header.site-header {
     }
 
     .beef-pattie:after {
-        bottom: -9px;
+        top: 9px;
     }
 }
 
 /* Open */
 
-body.nav-open .beef-pattie {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
+body.nav-open {
+    overflow: hidden;
 
-body.nav-open .beef-pattie:before {
-    top: 0;
-    transform: rotate(90deg);
-}
+    header.site-header {
+        nav.primary-nav {
+            transform: translate(-50%, -50%) scale(1);
+        }
 
-body.nav-open .beef-pattie:after {
-    top: 0;
+        .beef-pattie {
+            background-color: transparent;
+        }
+
+        .beef-pattie:before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        .beef-pattie:after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+    }
 }

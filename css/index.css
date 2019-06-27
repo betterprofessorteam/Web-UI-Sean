@@ -309,6 +309,7 @@ li {
 }
 a {
   text-decoration: none;
+  transition: 0.25s ease-in-out;
 }
 /* ------- */
 @keyframes bounceButton {
@@ -374,6 +375,38 @@ header.site-header {
     padding: 2%;
   }
 }
+header.site-header nav.primary-nav {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: transparent;
+  width: 3000px;
+  height: 3000px;
+  border-radius: 100%;
+  transition: 0.5s linear;
+  z-index: 9998;
+}
+header.site-header nav.primary-nav ul {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 0;
+  background-color: #39314b;
+  padding: 34%;
+  border-radius: 100%;
+}
+header.site-header nav.primary-nav ul li {
+  list-style-type: none;
+}
+header.site-header nav.primary-nav ul a {
+  color: #fff;
+  font-size: 3rem;
+}
+header.site-header nav.primary-nav ul a:hover {
+  color: #e36d5b;
+}
 header.site-header h2 {
   text-transform: none;
   color: #fff;
@@ -386,7 +419,7 @@ header.site-header .delicious-hamburger {
   width: 40px;
   height: 40px;
   background-color: transparent;
-  z-index: 1;
+  z-index: 9999;
 }
 @media (max-width: 500px) {
   header.site-header .delicious-hamburger {
@@ -418,6 +451,7 @@ header.site-header .beef-pattie {
   top: 50%;
   transform: translate(-50%, -50%);
   transition: 0.25s ease-in-out;
+  border-radius: 3px;
 }
 header.site-header .beef-pattie:before,
 header.site-header .beef-pattie:after {
@@ -428,24 +462,34 @@ header.site-header .beef-pattie:after {
   width: 35px;
   background-color: #fff;
   left: 0;
+  transition: 0.25s ease-in-out;
+  transform: rotate(0deg);
+  border-radius: 3px;
 }
 header.site-header .beef-pattie:before {
   top: -9px;
   transition: 0.25s ease-in-out;
 }
 header.site-header .beef-pattie:after {
-  bottom: -9px;
+  top: 9px;
 }
 /* Open */
-body.nav-open .beef-pattie {
-  transform: translate(-50%, -50%) rotate(45deg);
+body.nav-open {
+  overflow: hidden;
 }
-body.nav-open .beef-pattie:before {
-  top: 0;
-  transform: rotate(90deg);
+body.nav-open header.site-header nav.primary-nav {
+  transform: translate(-50%, -50%) scale(1);
 }
-body.nav-open .beef-pattie:after {
+body.nav-open header.site-header .beef-pattie {
+  background-color: transparent;
+}
+body.nav-open header.site-header .beef-pattie:before {
   top: 0;
+  transform: rotate(45deg);
+}
+body.nav-open header.site-header .beef-pattie:after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 section.hero {
   position: relative;
@@ -510,6 +554,7 @@ main section.main-info {
   overflow: hidden;
   position: relative;
   background: linear-gradient(90deg, #348ea1, #7abd92);
+  z-index: 0;
 }
 @media (max-width: 500px) {
   main section.main-info {
@@ -615,6 +660,14 @@ main section.main-info .get-started:hover:after {
 main section.main-info .get-started:hover {
   padding-right: 14%;
 }
+@media (max-width: 500px) {
+  main section.main-info .get-started {
+    padding: 3% 3%;
+  }
+  main section.main-info .get-started:hover {
+    padding-right: 8%;
+  }
+}
 main section.main-info-last {
   background: linear-gradient(-75deg, #d9463d, #b1566b);
 }
@@ -668,15 +721,59 @@ body.about section.hero {
   font-size: 1rem;
   color: #fff;
 }
+@media (max-width: 500px) {
+  body.about section.hero {
+    height: -webkit-fill-available;
+  }
+}
 body.about section.hero .content {
   left: 50%;
   top: 50%;
   padding: 4%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-body.about section.hero .center-content div {
-  padding: 2%;
+body.about section.hero .center-content > div {
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  body.about section.hero .center-content .bp-team {
+    flex-wrap: wrap;
+    padding: 0 2%;
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 500px) {
+  body.about section.hero .center-content .bp-team {
+    transform: scale(0.7);
+  }
+}
+body.about section.hero .center-content .bp-team .member {
+  padding: 1%;
+}
+body.about section.hero .center-content .bp-team .member:hover {
+  cursor: pointer;
+}
+body.about section.hero .center-content .bp-team .member img {
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+}
+body.about section.hero .center-content .bp-team .member h2 {
+  margin-top: 25px;
+}
+body.about section.hero .center-content .bp-team .member p {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+body.about section.hero .center-content .bp-team .member.active img {
+  transform: scale(1.2) translateY(-22px);
+  box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.4);
+}
+body.about section.hero .center-content .bp-team .member.active p {
+  opacity: 1;
 }
 footer {
   background-color: #38304b;
