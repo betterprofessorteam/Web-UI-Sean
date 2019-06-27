@@ -474,12 +474,11 @@ header.site-header .beef-pattie:after {
   top: 9px;
 }
 /* Open */
+body.nav-open {
+  overflow: hidden;
+}
 body.nav-open header.site-header nav.primary-nav {
   transform: translate(-50%, -50%) scale(1);
-}
-body.nav-open header.site-header .delicious-hamburger {
-  position: fixed;
-  right: 24px;
 }
 body.nav-open header.site-header .beef-pattie {
   background-color: transparent;
@@ -661,6 +660,14 @@ main section.main-info .get-started:hover:after {
 main section.main-info .get-started:hover {
   padding-right: 14%;
 }
+@media (max-width: 500px) {
+  main section.main-info .get-started {
+    padding: 3% 3%;
+  }
+  main section.main-info .get-started:hover {
+    padding-right: 8%;
+  }
+}
 main section.main-info-last {
   background: linear-gradient(-75deg, #d9463d, #b1566b);
 }
@@ -714,6 +721,11 @@ body.about section.hero {
   font-size: 1rem;
   color: #fff;
 }
+@media (max-width: 500px) {
+  body.about section.hero {
+    height: -webkit-fill-available;
+  }
+}
 body.about section.hero .content {
   left: 50%;
   top: 50%;
@@ -726,6 +738,18 @@ body.about section.hero .content {
 }
 body.about section.hero .center-content > div {
   width: 100%;
+}
+@media (max-width: 1200px) {
+  body.about section.hero .center-content .bp-team {
+    flex-wrap: wrap;
+    padding: 0 2%;
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 500px) {
+  body.about section.hero .center-content .bp-team {
+    transform: scale(0.7);
+  }
 }
 body.about section.hero .center-content .bp-team .member {
   padding: 1%;

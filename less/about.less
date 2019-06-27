@@ -10,6 +10,10 @@ body.about {
         font-size: 1rem;
         color: #fff;
 
+        @media @mobile {
+            height: -webkit-fill-available;
+        }
+
         .content {
             left: 50%;
             top: 50%;
@@ -26,6 +30,16 @@ body.about {
                 width: 100%;
             }
             .bp-team {
+                @media (max-width: 1200px) {
+                    flex-wrap: wrap;
+                    padding: 0 2%;
+                    justify-content: space-evenly;
+                }
+
+                @media @mobile {
+                    transform: scale(0.7);
+                }
+
                 .member {
                     padding: 1%;
 
