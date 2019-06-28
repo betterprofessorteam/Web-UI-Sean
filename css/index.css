@@ -196,6 +196,11 @@ body {
     width: 100%;
   }
 }
+@media (max-width: 500px) {
+  body:not(.about) .two-col > div:first-child {
+    padding-right: 8%;
+  }
+}
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
@@ -498,7 +503,7 @@ section.hero {
   font-size: 1rem;
   color: #fff;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   section.hero {
     background: url(../assets/images/app-use-reduced.png) 50% 127% no-repeat, linear-gradient(45deg, #f66b55, #f1995b);
     background-size: contain;
@@ -511,7 +516,7 @@ section.hero .content {
   padding: 4%;
   transform: translate(0%, -50%);
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   section.hero .content {
     top: 38%;
   }
@@ -522,11 +527,21 @@ section.hero .content .center-content {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 1200px) {
+  section.hero .content .center-content h1 {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
+}
 section.hero .content .center-content h3 {
   margin-bottom: 30px;
   font-size: 2.2rem;
   font-family: 'Open Sans';
   letter-spacing: -1px;
+}
+@media (max-width: 1200px) {
+  section.hero .content .center-content h3 {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
 }
 section.hero a.start-button {
   position: absolute;
@@ -548,6 +563,9 @@ section.hero a.start-button:after {
   width: 0;
   border: 25px solid transparent;
   border-top: 30px solid #fff;
+}
+body:not(.about) section.hero .content .center-content > div:first-child {
+  width: 65%;
 }
 main section.main-info {
   height: 100vh;
@@ -725,6 +743,11 @@ main section.main-info-last .color-triangle-top:after {
 body.about h1 {
   margin-bottom: 10%;
 }
+@media (max-width: 500px) {
+  body.about h1 {
+    margin-bottom: 0;
+  }
+}
 body.about section.hero {
   position: relative;
   height: 100vh;
@@ -746,6 +769,11 @@ body.about section.hero .content {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+@media (max-width: 500px) {
+  body.about section.hero .content {
+    top: 65%;
+  }
 }
 body.about section.hero .center-content > div {
   width: 100%;

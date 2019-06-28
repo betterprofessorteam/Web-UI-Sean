@@ -1,6 +1,10 @@
 body.about {
     h1 {
         margin-bottom: 10%;
+
+        @media @mobile {
+            margin-bottom: 0;
+        }
     }
 
     section.hero {
@@ -23,6 +27,10 @@ body.about {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+
+            @media @mobile {
+                top: 65%;
+            }
         }
 
         .center-content {
