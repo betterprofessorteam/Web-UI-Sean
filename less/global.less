@@ -22,7 +22,7 @@ body {
 }
 
 .two-col {
-    @media (max-width: 500px) {
+    @media @mobile {
         flex-direction: column;
     }
 }
@@ -30,7 +30,13 @@ body {
 .two-col > div {
     width: 65%;
 
-    @media (max-width: 500px) {
+    @media @mobile {
         width: 100%;
+    }
+}
+
+body:not(.about) .two-col > div:first-child {
+    @media @mobile {
+        padding-right: 8%;
     }
 }

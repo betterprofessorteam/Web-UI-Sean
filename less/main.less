@@ -17,6 +17,11 @@ main section.main-info {
         max-width: 1200px;
         z-index: 1;
 
+        @media (max-width: 1200px) {
+            max-width: initial;
+            width: 90%;
+        }
+
         @media @mobile {
             position: relative;
             padding: 10%;
@@ -28,6 +33,10 @@ main section.main-info {
     }
 
     img {
+        @media (max-width: 1200px) {
+            width: 100%;
+        }
+
         @media @mobile {
             width: 100%;
         }
