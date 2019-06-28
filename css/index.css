@@ -569,6 +569,12 @@ main section.main-info .flex-parent {
   max-width: 1200px;
   z-index: 1;
 }
+@media (max-width: 1200px) {
+  main section.main-info .flex-parent {
+    max-width: initial;
+    width: 90%;
+  }
+}
 @media (max-width: 500px) {
   main section.main-info .flex-parent {
     position: relative;
@@ -577,6 +583,11 @@ main section.main-info .flex-parent {
     left: initial;
     transform: none;
     max-width: initial;
+  }
+}
+@media (max-width: 1200px) {
+  main section.main-info img {
+    width: 100%;
   }
 }
 @media (max-width: 500px) {
